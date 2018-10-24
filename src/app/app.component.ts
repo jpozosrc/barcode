@@ -64,7 +64,7 @@ function startVideo() {
 
   navigator.mediaDevices.getUserMedia({ audio: false, video: true })
     .then(function(stream){
-      video = document.querySelector('video');
+      video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
       video.onloadedmetadata = function(e) { 
         video.play(); 
