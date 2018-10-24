@@ -153,13 +153,19 @@ function startVideo() {
     }
     navigator.mediaDevices.getUserMedia({ audio: false, video: true })
         .then(function (stream) {
+        alert('1');
         video = document.getElementById('video-player');
+        alert('2');
         video.srcObject = stream;
+        alert('3');
         video.onloadedmetadata = function (e) {
+            alert('4');
             video.play();
+            alert('5');
         };
     })
         .catch(function (err) {
+        alert('6');
         console.log(err);
     });
 }
