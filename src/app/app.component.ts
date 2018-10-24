@@ -77,6 +77,7 @@ function startVideo() {
     })
     .catch(function(err){
       alert('6');
+      alert(err);
       console.log(err)
     })
 }
