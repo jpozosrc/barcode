@@ -56,6 +56,12 @@ export class AppComponent {
 var video = null;
 
 function startVideo() {
+
+  if (!navigator.getUserMedia) {
+    alert('UserMedia not supported')
+    return;
+  }
+
   navigator.mediaDevices.getUserMedia({ audio: false, video: true })
     .then(function(stream){
       video = document.querySelector('video');
