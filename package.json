@@ -1,6 +1,9 @@
 {
   "name": "barcode",
   "version": "0.0.0",
+  "engines": {
+    "node": "10.7.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
