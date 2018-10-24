@@ -1,0 +1,13 @@
+
+
+<h3>Scan Barcode</h3>
+
+<input type="file" id="file-selector" (change)="onFileChanged($event)" ><br/><br/>
+<!--<img src="assets/barcode-frame.jpg" id="barcode-img" /><br/><br/> -->
+
+<video id="video-player" width="200" height="200"></video>
+
+
+<button type="button" (click)="scanFromStream()">Scan</button>
+
+<router-outlet></router-outlet>

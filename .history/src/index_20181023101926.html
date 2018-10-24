@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Barcode</title>
+  <base href="/">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+  <script src="assets/quagga.min.js"></script>
+  <script src="assets/file_input.js"></script>
+
+
+  <script type="text/javascript">
+  
+  var config = {
+            reader: "code_128",
+            length: 10
+        }
+
+  function scan() {
+    console.log('julio')
+    //var self = this, config = $.extend({}, self.state, {src: src});
+    //Quagga.decodeSingle(config, function(result) {});
+  }
+  
+  </script>
+
+
+</body>
+</html>
