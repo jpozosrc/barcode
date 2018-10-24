@@ -57,7 +57,7 @@ var video = null;
 
 function startVideo() {
 
-  if (!navigator.getUserMedia) {
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
     alert('UserMedia not supported')
     return;
   }

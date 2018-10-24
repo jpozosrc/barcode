@@ -147,13 +147,13 @@ var AppComponent = /** @class */ (function () {
 
 var video = null;
 function startVideo() {
-    if (!navigator.getUserMedia) {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
         alert('UserMedia not supported');
         return;
     }
     navigator.mediaDevices.getUserMedia({ audio: false, video: true })
         .then(function (stream) {
-        video = document.querySelector('video');
+        video = document.getElementById('video-player');
         video.srcObject = stream;
         video.onloadedmetadata = function (e) {
             video.play();
