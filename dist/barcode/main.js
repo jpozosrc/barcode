@@ -78,7 +78,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<h3 style=\"text-align: center;\">Scan Barcode</h3>\n\n<div style=\"width:100%;\">\n    <video id=\"video-player\" style=\"width: 350px; height: 150px;border: 4px solid green;margin-left:auto;margin-right:auto;display:block;\"></video>\n</div>\n\n<br/>\n\n<div style=\"width:100%;\">\n    <img src=\"../assets/camera.png\" (click)=\"initScanner()\" style=\"margin-left:auto;margin-right:auto;display:block;\" />\n</div>\n\n<h2>{{ barcodeResult }}</h2>\n\n<router-outlet></router-outlet>\n"
+module.exports = "\n\n<h3 style=\"text-align: center;\">Scan Barcode</h3>\n\n<div style=\"width:100%;\">\n    <video id=\"video-player\" style=\"width: 350px; height: 150px;border: 4px solid green;margin-left:auto;margin-right:auto;display:block;\"></video>\n</div>\n\n<br/>\n\n<div style=\"width:100%;\">\n    <button type=\"button\" (click)=\"initScanner()\">Scan Barcode</button>\n</div>\n\n<h2>{{ barcodeResult }}</h2>\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
