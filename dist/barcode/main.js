@@ -78,7 +78,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<h3 style=\"text-align: center;\">Scan Barcode</h3>\n\n<div style=\"width:100%;\">\n    <video id=\"video-player\" style=\"width: 350px; height: 150px;border: 4px solid green;margin-left:auto;margin-right:auto;display:block;\"></video>\n</div>\n\n<br/>\n\n<div style=\"width:100%;\">\n    <button type=\"button\" (click)=\"initScanner()\">Scan Barcode</button>\n</div>\n\n<h2>{{ barcodeResult }}</h2>\n\n<router-outlet></router-outlet>\n"
+module.exports = "\n\n<h3 style=\"text-align: center;\">Scan Barcode</h3>\n\n<div style=\"width:100%;\">\n    <video id=\"video-player\" style=\"width: 350px; height: 150px;border: 4px solid green;margin-left:auto;margin-right:auto;display:block;\"></video>\n</div>\n\n<br/>\n\n<div style=\"width:100%;\">\n    <button type=\"button\" (click)=\"initScanner()\">Scan Barcode</button>\n</div>\n\n<h2>{{ barcodeResult }}</h2>\n\n<div id=\"constraintlist\"></div>\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -151,20 +151,30 @@ function startVideo() {
         alert('UserMedia not supported');
         return;
     }
+    var constraintList = document.getElementById("constraintlist");
+    var supportedConstraints = navigator.mediaDevices.getSupportedConstraints();
+    for (var constraint in supportedConstraints) {
+        if (supportedConstraints.hasOwnProperty(constraint)) {
+            var elem = document.createElement("li");
+            elem.innerHTML = "<code>" + constraint + "</code>";
+            constraintList.appendChild(elem);
+        }
+    }
+    /*
     navigator.mediaDevices.getUserMedia({ audio: false, video: true })
-        .then(function (stream) {
-        var tracks = stream.getVideoTracks();
-        alert(tracks[0].label);
-        video = document.getElementById('video-player');
+      .then(function(stream){
+  
+  
+        video = document.getElementById('video-player') as HTMLVideoElement;
         video.srcObject = stream;
-        video.onloadedmetadata = function (e) {
-            video.play();
+        video.onloadedmetadata = function(e) {
+          video.play();
         };
-    })
-        .catch(function (err) {
+      })
+      .catch(function(err){
         alert(err);
-        console.log(err);
-    });
+        console.log(err)
+      }) */
 }
 function stopVideo() {
     if (video.srcObject) {
