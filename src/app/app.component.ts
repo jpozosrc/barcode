@@ -62,6 +62,53 @@ function startVideo() {
     return;
   }
 
+  enumerateDevices();
+  viewSupportedConstraints();
+
+  /*
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function(stream) {
+      video = document.getElementById('video-player') as HTMLVideoElement;
+      video.srcObject = stream;
+      video.onloadedmetadata = function(e) { video.play(); };
+    })
+    .catch(function(err){
+      alert(err);
+      console.log(err)
+    })
+  */ 
+}
+
+function stopVideo() {
+
+  if(video.srcObject) {
+    var track = video.srcObject.getTracks()[0];
+    track.stop();
+  }
+  
+  video.srcObject = null;
+}
+
+/* Debugging helper functions */
+
+function enumerateDevices() {
+  navigator.mediaDevices.enumerateDevices()
+    .then(function(devices) {
+      devices.forEach(function(device) {
+
+        let deviceList = document.getElementById("devices");
+        let elem = document.createElement("li");
+        elem.innerHTML = "<code>" + device.kind + ': ' + device.label + "</code>";
+        deviceList.appendChild(elem);
+        
+      });
+    })
+    .catch(function(err) {
+      console.log(err.name + ": " + err.message);
+    });
+}
+
+function viewSupportedConstraints() {
   let constraintList = document.getElementById("constraintlist");
   let supportedConstraints = navigator.mediaDevices.getSupportedConstraints();
   
@@ -73,30 +120,4 @@ function startVideo() {
       constraintList.appendChild(elem);
     }
   }
-
-  /*
-  navigator.mediaDevices.getUserMedia({ audio: false, video: true })
-    .then(function(stream){
-
-
-      video = document.getElementById('video-player') as HTMLVideoElement;
-      video.srcObject = stream;
-      video.onloadedmetadata = function(e) { 
-        video.play();
-      };
-    })
-    .catch(function(err){
-      alert(err);
-      console.log(err)
-    }) */
-}
-
-function stopVideo() {
-
-  if(video.srcObject) {
-    var track = video.srcObject.getTracks()[0];
-    track.stop();
-  }
-  
-  video.srcObject = null;
 }
