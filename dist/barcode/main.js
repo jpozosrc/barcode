@@ -152,7 +152,7 @@ function startVideo() {
         return;
     }
     enumerateDevices();
-    viewSupportedConstraints();
+    //viewSupportedConstraints();
     /*
     navigator.mediaDevices.getUserMedia({ video: true })
       .then(function(stream) {

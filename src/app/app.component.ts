@@ -63,7 +63,7 @@ function startVideo() {
   }
 
   enumerateDevices();
-  viewSupportedConstraints();
+  //viewSupportedConstraints();
 
   /*
   navigator.mediaDevices.getUserMedia({ video: true })
