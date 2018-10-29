@@ -153,18 +153,16 @@ function startVideo() {
     }
     enumerateDevices();
     //viewSupportedConstraints();
-    /*
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(function(stream) {
-        video = document.getElementById('video-player') as HTMLVideoElement;
+    navigator.mediaDevices.getUserMedia({ video: { deviceId: 'camera2 1, facing front' } })
+        .then(function (stream) {
+        video = document.getElementById('video-player');
         video.srcObject = stream;
-        video.onloadedmetadata = function(e) { video.play(); };
-      })
-      .catch(function(err){
+        video.onloadedmetadata = function (e) { video.play(); };
+    })
+        .catch(function (err) {
         alert(err);
-        console.log(err)
-      })
-    */
+        console.log(err);
+    });
 }
 function stopVideo() {
     if (video.srcObject) {
@@ -180,7 +178,7 @@ function enumerateDevices() {
         devices.forEach(function (device) {
             var deviceList = document.getElementById("devices");
             var elem = document.createElement("li");
-            elem.innerHTML = "<code>" + device.kind + ': ' + device.label + "</code>";
+            elem.innerHTML = "<code>" + device.kind + ': ' + device.label + ' ' + device.deviceId + "</code>";
             deviceList.appendChild(elem);
         });
     })

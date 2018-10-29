@@ -65,8 +65,8 @@ function startVideo() {
   enumerateDevices();
   //viewSupportedConstraints();
 
-  /*
-  navigator.mediaDevices.getUserMedia({ video: true })
+  
+  navigator.mediaDevices.getUserMedia({ video: { deviceId: 'camera2 1, facing front' } })
     .then(function(stream) {
       video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
@@ -76,7 +76,7 @@ function startVideo() {
       alert(err);
       console.log(err)
     })
-  */ 
+   
 }
 
 function stopVideo() {
@@ -98,7 +98,7 @@ function enumerateDevices() {
 
         let deviceList = document.getElementById("devices");
         let elem = document.createElement("li");
-        elem.innerHTML = "<code>" + device.kind + ': ' + device.label + "</code>";
+        elem.innerHTML = "<code>" + device.kind + ': ' + device.label + ' ' + device.deviceId + "</code>";
         deviceList.appendChild(elem);
         
       });
