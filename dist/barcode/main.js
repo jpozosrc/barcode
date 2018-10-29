@@ -103,7 +103,10 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'barcode';
+        this.selectedDevice = '';
     }
+    AppComponent.prototype.ngOnInit = function () {
+    };
     AppComponent.prototype.initScanner = function () {
         var config = {
             decoder: { readers: ["code_128_reader"] },
@@ -124,7 +127,6 @@ var AppComponent = /** @class */ (function () {
             Quagga.start();
             console.log("Scanning engine ready.");
             Quagga.onDetected(function (result) {
-                //console.log(result) 
                 video.pause();
                 alert(result.codeResult.code);
                 stopVideo();
@@ -151,9 +153,13 @@ function startVideo() {
         alert('UserMedia not supported');
         return;
     }
-    enumerateDevices();
+    //enumerateDevices();
     //viewSupportedConstraints();
-    navigator.mediaDevices.getUserMedia({ video: { deviceId: { exact: '98d85a4175182ffbff3b8e46965280d271437700fdd49e7aed4682aec87627cf' } } })
+    var constraints = {
+        audio: false,
+        video: { facingMode: { exact: "environment" } }
+    };
+    navigator.mediaDevices.getUserMedia(constraints)
         .then(function (stream) {
         video = document.getElementById('video-player');
         video.srcObject = stream;
@@ -176,9 +182,9 @@ function enumerateDevices() {
     navigator.mediaDevices.enumerateDevices()
         .then(function (devices) {
         devices.forEach(function (device) {
-            var deviceList = document.getElementById("devices");
-            var elem = document.createElement("li");
-            elem.innerHTML = "<code>" + device.kind + ': ' + device.label + ' ' + device.deviceId + "</code>";
+            var deviceList = document.getElementById("device-list");
+            var elem = document.createElement("option");
+            elem.innerHTML = '<option value="' + device.deviceId + '">' + device.deviceId + '</option>';
             deviceList.appendChild(elem);
         });
     })
