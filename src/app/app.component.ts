@@ -66,7 +66,7 @@ function startVideo() {
   //viewSupportedConstraints();
 
   
-  navigator.mediaDevices.getUserMedia({ video: { deviceId: 'camera2 1, facing front' } })
+  navigator.mediaDevices.getUserMedia({ video: { deviceId: { exact: '98d85a4175182ffbff3b8e46965280d271437700fdd49e7aed4682aec87627cf' } } })
     .then(function(stream) {
       video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
