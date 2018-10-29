@@ -147,28 +147,17 @@ var AppComponent = /** @class */ (function () {
 
 var video = null;
 function startVideo() {
-    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-        alert('UserMedia not supported');
-        return;
-    }
-    navigator.mediaDevices.getUserMedia({ audio: false, video: true })
-        .then(function (stream) {
-        alert('1');
-        video = document.getElementById('video-player');
-        alert('2');
-        video.srcObject = stream;
-        alert('3');
-        video.onloadedmetadata = function (e) {
-            alert('4');
-            video.play();
-            alert('5');
-        };
-    })
-        .catch(function (err) {
-        alert('6');
-        alert(err);
-        console.log(err);
-    });
+    //navigator.mediaDevices.getUserMedia({ audio: false, video: true })
+    navigator.getUserMedia({ audio: false, video: true }, function (stream) { video = document.querySelector('video'); video.srcObject = stream; video.onloadedmetadata = function (e) { video.play(); }; }, function (err) { console.log(err); });
+    /*
+          .then(function(stream){
+          video = document.querySelector('video');
+          video.srcObject = stream;
+          video.onloadedmetadata = function(e) { video.play(); };
+        })
+        .catch(function(err){
+          console.log(err)
+        }) */
 }
 function stopVideo() {
     if (video.srcObject) {
