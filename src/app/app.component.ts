@@ -62,11 +62,22 @@ function startVideo() {
     return;
   }
 
+  let constraintList = document.getElementById("constraintlist");
+  let supportedConstraints = navigator.mediaDevices.getSupportedConstraints();
+  
+  for (let constraint in supportedConstraints) {
+    if (supportedConstraints.hasOwnProperty(constraint)) {
+      let elem = document.createElement("li");
+      
+      elem.innerHTML = "<code>" + constraint + "</code>";
+      constraintList.appendChild(elem);
+    }
+  }
+
+  /*
   navigator.mediaDevices.getUserMedia({ audio: false, video: true })
     .then(function(stream){
 
-      var tracks = stream.getVideoTracks();
-      alert(tracks[0].label);
 
       video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
@@ -77,7 +88,7 @@ function startVideo() {
     .catch(function(err){
       alert(err);
       console.log(err)
-    })
+    }) */
 }
 
 function stopVideo() {
