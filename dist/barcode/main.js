@@ -147,17 +147,24 @@ var AppComponent = /** @class */ (function () {
 
 var video = null;
 function startVideo() {
-    //navigator.mediaDevices.getUserMedia({ audio: false, video: true })
-    navigator.getUserMedia({ audio: false, video: true }, function (stream) { video = document.querySelector('video'); video.srcObject = stream; video.onloadedmetadata = function (e) { video.play(); }; }, function (err) { console.log(err); });
-    /*
-          .then(function(stream){
-          video = document.querySelector('video');
-          video.srcObject = stream;
-          video.onloadedmetadata = function(e) { video.play(); };
-        })
-        .catch(function(err){
-          console.log(err)
-        }) */
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+        alert('UserMedia not supported');
+        return;
+    }
+    navigator.mediaDevices.getUserMedia({ audio: false, video: true })
+        .then(function (stream) {
+        var tracks = stream.getVideoTracks();
+        alert(tracks[0].label);
+        video = document.getElementById('video-player');
+        video.srcObject = stream;
+        video.onloadedmetadata = function (e) {
+            video.play();
+        };
+    })
+        .catch(function (err) {
+        alert(err);
+        console.log(err);
+    });
 }
 function stopVideo() {
     if (video.srcObject) {

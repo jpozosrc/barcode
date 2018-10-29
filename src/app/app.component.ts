@@ -57,22 +57,27 @@ var video = null;
 
 function startVideo() {
 
-    //navigator.mediaDevices.getUserMedia({ audio: false, video: true })
-    navigator.getUserMedia(
-      { audio: false, video: true }, 
-      function(stream) { video = document.querySelector('video'); video.srcObject = stream; video.onloadedmetadata = function(e) { video.play(); }; }, 
-      function(err) { console.log(err) }
-      )
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    alert('UserMedia not supported')
+    return;
+  }
 
-/*
-      .then(function(stream){
-      video = document.querySelector('video');
+  navigator.mediaDevices.getUserMedia({ audio: false, video: true })
+    .then(function(stream){
+
+      var tracks = stream.getVideoTracks();
+      alert(tracks[0].label);
+
+      video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
-      video.onloadedmetadata = function(e) { video.play(); };
+      video.onloadedmetadata = function(e) { 
+        video.play();
+      };
     })
     .catch(function(err){
+      alert(err);
       console.log(err)
-    }) */
+    })
 }
 
 function stopVideo() {
