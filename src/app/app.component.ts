@@ -75,9 +75,14 @@ function startVideo() {
   
   navigator.mediaDevices.getUserMedia(constraints)
     .then(function(stream) {
+      try {
       video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
       video.onloadedmetadata = function(e) { try { video.play();} catch(e){alert(e)} };
+      }
+      catch(e) {
+        alert(e)
+      }
     })
     .catch(function(err){
       alert(err);
