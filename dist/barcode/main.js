@@ -166,7 +166,6 @@ function startVideo() {
         video.srcObject = stream;
         var tracks = video.srcObject.getTracks();
         console.log('Number of tracks: ' + tracks.length);
-        tracks[0].stop();
         video.onloadedmetadata = function (e) { video.play(); };
     })
         .catch(function (err) {

@@ -81,7 +81,6 @@ function startVideo() {
       
       var tracks = video.srcObject.getTracks()
       console.log('Number of tracks: ' + tracks.length)
-      tracks[0].stop();
 
       video.onloadedmetadata = function(e) { video.play(); };
     })
