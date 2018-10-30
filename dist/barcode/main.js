@@ -157,7 +157,7 @@ function startVideo() {
     //viewSupportedConstraints();
     var constraints = {
         audio: false,
-        video: { facingMode: { exact: "user" }, width: 320, height: 240 }
+        video: { facingMode: { exact: "environment" }, width: 320, height: 240 }
     };
     navigator.mediaDevices.getUserMedia(constraints)
         .then(function (stream) {
