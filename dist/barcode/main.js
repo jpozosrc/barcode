@@ -154,26 +154,16 @@ function startVideo() {
         return;
     }
     //enumerateDevices();
-    viewSupportedConstraints();
+    //viewSupportedConstraints();
     var constraints = {
         audio: false,
-        video: { facingMode: { exact: "environment" } }
+        video: { facingMode: "environment" }
     };
     navigator.mediaDevices.getUserMedia(constraints)
         .then(function (stream) {
-        try {
-            video = document.getElementById('video-player');
-            video.srcObject = stream;
-            video.onloadedmetadata = function (e) { try {
-                video.play();
-            }
-            catch (e) {
-                alert(e);
-            } };
-        }
-        catch (e) {
-            alert(e);
-        }
+        video = document.getElementById('video-player');
+        video.srcObject = stream;
+        video.onloadedmetadata = function (e) { video.play(); };
     })
         .catch(function (err) {
         alert(err);
