@@ -66,11 +66,11 @@ function startVideo() {
   }
 
   //enumerateDevices();
-  //viewSupportedConstraints();
+  viewSupportedConstraints();
 
   var constraints = { 
     audio: false,
-    video: { facingMode: { exact: "environment" }, width: 320 }
+    video: { facingMode: { exact: "environment" } }
   };
   
   navigator.mediaDevices.getUserMedia(constraints)
