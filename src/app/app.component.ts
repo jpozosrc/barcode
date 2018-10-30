@@ -70,13 +70,19 @@ function startVideo() {
 
   var constraints = { 
     audio: false,
-    video: { facingMode: { exact: "environment" }, width: 320, height: 240 }
+    //video: { facingMode: { exact: "environment" }, width: 320, height: 240 }
+    video: { facingMode: { exact: "environment" } }
   };
   
   navigator.mediaDevices.getUserMedia(constraints)
     .then(function(stream) {
       video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
+      
+      var tracks = video.srcObject.getTracks()
+      console.log('Number of tracks: ' + tracks.length)
+      tracks[0].stop();
+
       video.onloadedmetadata = function(e) { video.play(); };
     })
     .catch(function(err){
