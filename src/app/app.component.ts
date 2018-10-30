@@ -70,7 +70,7 @@ function startVideo() {
 
   var constraints = { 
     audio: false,
-    video: { facingMode: { exact: "environment" }, width: 350, height: 150 }
+    video: { facingMode: { exact: "user" }, width: 320, height: 240 }
   };
   
   navigator.mediaDevices.getUserMedia(constraints)
