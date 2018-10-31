@@ -1,0 +1,22 @@
+
+<div class="barcode-component">
+    
+    <h3>Scan Barcode</h3>
+
+    <div class="video-container">
+        <video id="video-player" autoplay>
+            Your browser does not support HTML5 video.
+        </video>
+        <canvas class="drawingBuffer"></canvas>
+    </div>
+
+    <div class="button-container">
+        <button type="button" (click)="startScanner()">Start</button>&nbsp;
+        <button type="button" (click)="stopScanner()">Stop</button>
+    </div>
+
+    <h2 id="barcode-result"></h2>
+
+</div>
+
+<router-outlet></router-outlet>

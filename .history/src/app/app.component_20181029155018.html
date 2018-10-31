@@ -1,0 +1,20 @@
+
+
+<h3 style="text-align: center;">Scan Barcode</h3>
+
+<div style="width:100%;">
+    <video id="video-player" style="width: 350px; height: 150px;border: 4px solid green;"></video>
+</div>
+
+<br/>
+
+<div style="width:100%;">
+    <button type="button" (click)="initScanner()">Scan Barcode</button>
+</div>
+
+<h2>{{ barcodeResult }}</h2>
+
+<div id="devices"></div>
+<div id="constraintlist"></div>
+
+<router-outlet></router-outlet>

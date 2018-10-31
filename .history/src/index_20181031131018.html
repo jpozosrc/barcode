@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Barcode</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="/assets/manifest.json">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Barcode PWA">
+    <link rel="apple-touch-icon" href="assets/icon-152x152.png">
+
+    <meta name="msapplication-TileImage" content="assets/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+  
+  </head>
+
+  <body>
+
+    <div class="container">
+      <app-root></app-root>
+    </div>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+             .register('sw.js')
+             .then(function() { console.log('Service Worker Registered'); });
+      }
+    </script>
+    <script src="/assets/quagga.min.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,42 @@
+video {
+    border-radius: 6px;
+    width: 320px; 
+    height: 240px;
+    border: 4px solid green;
+    margin-left: auto;
+    margin-right: auto; 
+    display:block;
+}
+
+button {
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto; 
+    display:block;
+}
+
+.overlay__content canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+#interactive.viewport {
+    position: relative;
+}
+
+#interactive.viewport > canvas, #interactive.viewport > video {
+    max-width: 100%;
+    width: 100%;
+}
+
+
+canvas.drawing, canvas.drawingBuffer {
+    width: 320px; 
+    height: 240px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}

@@ -1,0 +1,22 @@
+
+
+<h3 style="text-align: center;">Scan Barcode</h3>
+
+<div style="width:100%;">
+    <video id="video-player" autoplay>
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+
+<br/>
+
+<div style="width:100%;">
+    <button type="button" (click)="initScanner()">Scan Barcode</button>
+</div>
+
+<h2>{{ barcodeResult }}</h2>
+
+<div id="devices"></div>
+<div id="constraintlist"></div>
+
+<router-outlet></router-outlet>
