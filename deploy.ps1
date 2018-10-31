@@ -1,4 +1,6 @@
-﻿git add .
+﻿param($commitMsg)
+
+git add .
 npm run build
-git commit -am "Fixing iPhone"
+git commit -am "$commitMsg"
 git push origin master
