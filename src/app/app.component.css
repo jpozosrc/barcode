@@ -1,4 +1,5 @@
 video {
+    border-radius: 6px;
     width: 320px; 
     height: 240px;
     border: 4px solid green;
