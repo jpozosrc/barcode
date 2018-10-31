@@ -14,3 +14,11 @@ button {
     margin-right: auto; 
     display:block;
 }
+
+canvas.drawing, canvas.drawingBuffer {
+    width: 320px; 
+    height: 240px;
+    position: absolute;
+    left: 25px;
+    top: 50px;
+}

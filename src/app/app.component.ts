@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 declare var Quagga: any;
 
 @Component({
@@ -7,15 +7,11 @@ declare var Quagga: any;
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent  implements OnInit {
+export class AppComponent {
 
-  title = 'barcode';
-  selectedDevice : string = '';
-
-  ngOnInit() {
-  }
-  
-  initScanner() : void {
+  barcode : string = '';
+ 
+  startScanner() : void {
 
     var config = {
       decoder: { readers: ["code_128_reader"] },
@@ -31,23 +27,77 @@ export class AppComponent  implements OnInit {
 
     Quagga.init(config, function(err) {
 
-        startVideo();
+      startVideo();
 
-        if (err) {
-            console.log(err);
-            return
+      if (err) {
+          console.log(err);
+          return
+      }
+      
+      Quagga.start();
+      console.log("Scanning engine ready.");
+
+      Quagga.onProcessed(function(result) {
+
+        /*
+        var drawingCtx = Quagga.canvas.ctx.overlay,
+            drawingCanvas = Quagga.canvas.dom.overlay;
+            console.log(drawingCtx)
+        if (result) {
+            if (result.boxes) {
+                drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+                result.boxes.filter(function (box) {
+                    return box !== result.box;
+                }).forEach(function (box) {
+                    Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 2});
+                });
+            }
+
+            if (result.box) {
+                Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
+            }
+
+            if (result.codeResult && result.codeResult.code) {
+                Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
+            }
+        }*/
+      });
+  
+      Quagga.onDetected(function(result) {
+
+        //video.pause();
+        //this.barcode = 'julio'
+        document.getElementById('barcode-result').innerText = 'Code: ' +  result.codeResult.code;
+        //alert(result.codeResult.code);
+        //stopVideo();
+        //Quagga.stop();
+
+        var drawingCtx = Quagga.canvas.ctx.overlay,
+        drawingCanvas = Quagga.canvas.dom.overlay;
+
+        if (result) {
+            if (result.boxes) {
+                drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+                result.boxes.filter(function (box) {
+                    return box !== result.box;
+                }).forEach(function (box) {
+                    Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 4});
+                });
+            }
+
+            if (result.box) {
+                Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 4});
+            }
+
+            if (result.codeResult && result.codeResult.code) {
+                Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 6});
+            }
         }
-        
-        Quagga.start();
-        console.log("Scanning engine ready.");
 
-        Quagga.onDetected(function(result) {
-          video.pause();
-          alert(result.codeResult.code);
-          stopVideo();
-          Quagga.stop();
-        })
+      });
+
     });
+
   }
 
   stopScanner() : void {

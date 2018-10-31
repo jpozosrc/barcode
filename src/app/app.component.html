@@ -6,11 +6,12 @@
     <video id="video-player" autoplay controls>
         Your browser does not support HTML5 video.
     </video>
+    <canvas class="drawingBuffer"></canvas>
     <br/>
-    <button type="button" (click)="initScanner()">Scan Barcode</button>
+    <button type="button" (click)="startScanner()">Scan Barcode</button>
 </div>
 
-<h2 id="barcode-result">{{ barcodeResult }}</h2>
+<h2 id="barcode-result"></h2>
 
 <div id="devices"></div>
 <div id="constraintlist"></div>

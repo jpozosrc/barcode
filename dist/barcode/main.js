@@ -67,7 +67,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "video {\r\n    border-radius: 6px;\r\n    width: 320px; \r\n    height: 240px;\r\n    border: 4px solid green;\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display:block;\r\n}\r\n\r\nbutton {\r\n    padding: 10px;\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display:block;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxtQkFBbUI7SUFDbkIsYUFBYTtJQUNiLGNBQWM7SUFDZCx3QkFBd0I7SUFDeEIsa0JBQWtCO0lBQ2xCLG1CQUFtQjtJQUNuQixjQUFjO0NBQ2pCOztBQUVEO0lBQ0ksY0FBYztJQUNkLGtCQUFrQjtJQUNsQixtQkFBbUI7SUFDbkIsY0FBYztDQUNqQiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidmlkZW8ge1xyXG4gICAgYm9yZGVyLXJhZGl1czogNnB4O1xyXG4gICAgd2lkdGg6IDMyMHB4OyBcclxuICAgIGhlaWdodDogMjQwcHg7XHJcbiAgICBib3JkZXI6IDRweCBzb2xpZCBncmVlbjtcclxuICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiBhdXRvOyBcclxuICAgIGRpc3BsYXk6YmxvY2s7XHJcbn1cclxuXHJcbmJ1dHRvbiB7XHJcbiAgICBwYWRkaW5nOiAxMHB4O1xyXG4gICAgbWFyZ2luLWxlZnQ6IGF1dG87XHJcbiAgICBtYXJnaW4tcmlnaHQ6IGF1dG87IFxyXG4gICAgZGlzcGxheTpibG9jaztcclxufSJdfQ== */"
+module.exports = "video {\r\n    border-radius: 6px;\r\n    width: 320px; \r\n    height: 240px;\r\n    border: 4px solid green;\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display:block;\r\n}\r\n\r\nbutton {\r\n    padding: 10px;\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display:block;\r\n}\r\n\r\ncanvas.drawing, canvas.drawingBuffer {\r\n    width: 320px; \r\n    height: 240px;\r\n    position: absolute;\r\n    left: 25px;\r\n    top: 50px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxtQkFBbUI7SUFDbkIsYUFBYTtJQUNiLGNBQWM7SUFDZCx3QkFBd0I7SUFDeEIsa0JBQWtCO0lBQ2xCLG1CQUFtQjtJQUNuQixjQUFjO0NBQ2pCOztBQUVEO0lBQ0ksY0FBYztJQUNkLGtCQUFrQjtJQUNsQixtQkFBbUI7SUFDbkIsY0FBYztDQUNqQjs7QUFFRDtJQUNJLGFBQWE7SUFDYixjQUFjO0lBQ2QsbUJBQW1CO0lBQ25CLFdBQVc7SUFDWCxVQUFVO0NBQ2IiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInZpZGVvIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDZweDtcclxuICAgIHdpZHRoOiAzMjBweDsgXHJcbiAgICBoZWlnaHQ6IDI0MHB4O1xyXG4gICAgYm9yZGVyOiA0cHggc29saWQgZ3JlZW47XHJcbiAgICBtYXJnaW4tbGVmdDogYXV0bztcclxuICAgIG1hcmdpbi1yaWdodDogYXV0bzsgXHJcbiAgICBkaXNwbGF5OmJsb2NrO1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gICAgcGFkZGluZzogMTBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiBhdXRvOyBcclxuICAgIGRpc3BsYXk6YmxvY2s7XHJcbn1cclxuXHJcbmNhbnZhcy5kcmF3aW5nLCBjYW52YXMuZHJhd2luZ0J1ZmZlciB7XHJcbiAgICB3aWR0aDogMzIwcHg7IFxyXG4gICAgaGVpZ2h0OiAyNDBweDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGxlZnQ6IDI1cHg7XHJcbiAgICB0b3A6IDUwcHg7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -78,7 +78,7 @@ module.exports = "video {\r\n    border-radius: 6px;\r\n    width: 320px; \r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<h3 style=\"text-align: center;\">Scan Barcode</h3>\n\n<div style=\"width:100%;\">\n    <video id=\"video-player\" autoplay controls>\n        Your browser does not support HTML5 video.\n    </video>\n    <br/>\n    <button type=\"button\" (click)=\"initScanner()\">Scan Barcode</button>\n</div>\n\n<h2 id=\"barcode-result\">{{ barcodeResult }}</h2>\n\n<div id=\"devices\"></div>\n<div id=\"constraintlist\"></div>\n\n<router-outlet></router-outlet>\n"
+module.exports = "\n\n<h3 style=\"text-align: center;\">Scan Barcode</h3>\n\n<div style=\"width:100%;\">\n    <video id=\"video-player\" autoplay controls>\n        Your browser does not support HTML5 video.\n    </video>\n    <canvas class=\"drawingBuffer\"></canvas>\n    <br/>\n    <button type=\"button\" (click)=\"startScanner()\">Scan Barcode</button>\n</div>\n\n<h2 id=\"barcode-result\"></h2>\n\n<div id=\"devices\"></div>\n<div id=\"constraintlist\"></div>\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -102,12 +102,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'barcode';
-        this.selectedDevice = '';
+        this.barcode = '';
     }
-    AppComponent.prototype.ngOnInit = function () {
-    };
-    AppComponent.prototype.initScanner = function () {
+    AppComponent.prototype.startScanner = function () {
         var config = {
             decoder: { readers: ["code_128_reader"] },
             locate: true,
@@ -126,11 +123,54 @@ var AppComponent = /** @class */ (function () {
             }
             Quagga.start();
             console.log("Scanning engine ready.");
+            Quagga.onProcessed(function (result) {
+                /*
+                var drawingCtx = Quagga.canvas.ctx.overlay,
+                    drawingCanvas = Quagga.canvas.dom.overlay;
+                    console.log(drawingCtx)
+                if (result) {
+                    if (result.boxes) {
+                        drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+                        result.boxes.filter(function (box) {
+                            return box !== result.box;
+                        }).forEach(function (box) {
+                            Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 2});
+                        });
+                    }
+        
+                    if (result.box) {
+                        Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
+                    }
+        
+                    if (result.codeResult && result.codeResult.code) {
+                        Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
+                    }
+                }*/
+            });
             Quagga.onDetected(function (result) {
-                video.pause();
-                alert(result.codeResult.code);
-                stopVideo();
-                Quagga.stop();
+                //video.pause();
+                //this.barcode = 'julio'
+                document.getElementById('barcode-result').innerText = 'Code: ' + result.codeResult.code;
+                //alert(result.codeResult.code);
+                //stopVideo();
+                //Quagga.stop();
+                var drawingCtx = Quagga.canvas.ctx.overlay, drawingCanvas = Quagga.canvas.dom.overlay;
+                if (result) {
+                    if (result.boxes) {
+                        drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+                        result.boxes.filter(function (box) {
+                            return box !== result.box;
+                        }).forEach(function (box) {
+                            Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, { color: "green", lineWidth: 4 });
+                        });
+                    }
+                    if (result.box) {
+                        Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, { color: "#00F", lineWidth: 4 });
+                    }
+                    if (result.codeResult && result.codeResult.code) {
+                        Quagga.ImageDebug.drawPath(result.line, { x: 'x', y: 'y' }, drawingCtx, { color: 'red', lineWidth: 6 });
+                    }
+                }
             });
         });
     };
