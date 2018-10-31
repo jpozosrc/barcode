@@ -77,7 +77,7 @@ function startVideo() {
     .then(function(stream) {
       video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
-      //video.onloadedmetadata = function(e) { video.play(); };
+      video.onloadedmetadata = function(e) { video.play(); };
     })
     .catch(function(err){
       alert(err);
