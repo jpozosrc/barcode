@@ -34,7 +34,6 @@ export class AppComponent {
       }
       
       Quagga.start();
-      console.log("Scanning engine ready.");
     });
 
     Quagga.onDetected(function(result) {
@@ -81,9 +80,6 @@ function startVideo() {
     return;
   }
 
-  //enumerateDevices();
-  //viewSupportedConstraints();
-
   var constraints = { 
     audio: false,
     video: { facingMode: "environment" }
@@ -93,7 +89,6 @@ function startVideo() {
     .then(function(stream) {
       video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
-      //video.onloadedmetadata = function(e) { video.play(); };
     })
     .catch(function(err){
       alert(err);
@@ -114,4 +109,5 @@ function stopVideo() {
   var canvas = document.getElementById('scanner-canvas') as HTMLCanvasElement;
   const context = canvas.getContext('2d');
   context.clearRect(0, 0, canvas.width, canvas.height);
+  document.getElementById('barcode-result').innerText = '';
 }

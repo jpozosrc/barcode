@@ -1,6 +1,6 @@
 {
-  "name": "barcode",
-  "short_name": "barcode",
+  "name": "Barcode",
+  "short_name": "Barcode Reader",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

@@ -122,7 +122,6 @@ var AppComponent = /** @class */ (function () {
                 return;
             }
             Quagga.start();
-            console.log("Scanning engine ready.");
         });
         Quagga.onDetected(function (result) {
             document.getElementById('barcode-result').innerText = 'Code: ' + result.codeResult.code;
@@ -164,8 +163,6 @@ function startVideo() {
         alert('UserMedia not supported');
         return;
     }
-    //enumerateDevices();
-    //viewSupportedConstraints();
     var constraints = {
         audio: false,
         video: { facingMode: "environment" }
@@ -174,7 +171,6 @@ function startVideo() {
         .then(function (stream) {
         video = document.getElementById('video-player');
         video.srcObject = stream;
-        //video.onloadedmetadata = function(e) { video.play(); };
     })
         .catch(function (err) {
         alert(err);
@@ -191,6 +187,7 @@ function stopVideo() {
     var canvas = document.getElementById('scanner-canvas');
     var context = canvas.getContext('2d');
     context.clearRect(0, 0, canvas.width, canvas.height);
+    document.getElementById('barcode-result').innerText = '';
 }
 
 
