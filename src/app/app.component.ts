@@ -70,14 +70,14 @@ function startVideo() {
 
   var constraints = { 
     audio: false,
-    video: { facingMode: "default" }
+    video: { facingMode: "environment" }
   };
   
   navigator.mediaDevices.getUserMedia(constraints)
     .then(function(stream) {
       video = document.getElementById('video-player') as HTMLVideoElement;
       video.srcObject = stream;
-      video.onloadedmetadata = function(e) { video.play(); };
+      //video.onloadedmetadata = function(e) { video.play(); };
     })
     .catch(function(err){
       alert(err);
