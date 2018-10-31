@@ -26,7 +26,6 @@ export class AppComponent {
     };
 
     Quagga.init(config, function(err) {
-
       startVideo();
 
       if (err) {
@@ -36,65 +35,32 @@ export class AppComponent {
       
       Quagga.start();
       console.log("Scanning engine ready.");
+    });
 
-      Quagga.onProcessed(function(result) {
+    Quagga.onDetected(function(result) {
 
-        /*
-        var drawingCtx = Quagga.canvas.ctx.overlay,
-            drawingCanvas = Quagga.canvas.dom.overlay;
-            console.log(drawingCtx)
-        if (result) {
-            if (result.boxes) {
-                drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
-                result.boxes.filter(function (box) {
-                    return box !== result.box;
-                }).forEach(function (box) {
-                    Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 2});
-                });
-            }
+      document.getElementById('barcode-result').innerText = 'Code: ' +  result.codeResult.code;
+      var drawingCtx = Quagga.canvas.ctx.overlay,
+      drawingCanvas = Quagga.canvas.dom.overlay;
 
-            if (result.box) {
-                Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
-            }
-
-            if (result.codeResult && result.codeResult.code) {
-                Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
-            }
-        }*/
-      });
-  
-      Quagga.onDetected(function(result) {
-
-        //video.pause();
-        //this.barcode = 'julio'
-        document.getElementById('barcode-result').innerText = 'Code: ' +  result.codeResult.code;
-        //alert(result.codeResult.code);
-        //stopVideo();
-        //Quagga.stop();
-
-        var drawingCtx = Quagga.canvas.ctx.overlay,
-        drawingCanvas = Quagga.canvas.dom.overlay;
-
-        if (result) {
-            if (result.boxes) {
-                drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
-                result.boxes.filter(function (box) {
-                    return box !== result.box;
-                }).forEach(function (box) {
-                    Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 4});
-                });
-            }
-
-            if (result.box) {
-                Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 4});
-            }
-
-            if (result.codeResult && result.codeResult.code) {
-                Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 6});
-            }
+      if (result) {
+        if (result.boxes) {
+            drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+            result.boxes.filter(function (box) {
+                return box !== result.box;
+            }).forEach(function (box) {
+                Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 4});
+            });
         }
 
-      });
+        if (result.box) {
+            Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 4});
+        }
+
+        if (result.codeResult && result.codeResult.code) {
+            Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 6});
+        }
+      }
 
     });
 
@@ -137,6 +103,7 @@ function startVideo() {
 }
 
 function stopVideo() {
+  Quagga.stop();
 
   if(video.srcObject) {
     var track = video.srcObject.getTracks()[0];
@@ -144,37 +111,7 @@ function stopVideo() {
   }
   
   video.srcObject = null;
-}
-
-/* Debugging helper functions */
-
-function enumerateDevices() {
-  navigator.mediaDevices.enumerateDevices()
-    .then(function(devices) {
-
-      devices.forEach(function(device) {
-        let deviceList = document.getElementById("device-list");
-        let elem = document.createElement("option");
-        elem.innerHTML = '<option value="' + device.deviceId + '">' + device.deviceId + '</option>';
-        deviceList.appendChild(elem);
-        
-      });
-    })
-    .catch(function(err) {
-      console.log(err.name + ": " + err.message);
-    });
-}
-
-function viewSupportedConstraints() {
-  let constraintList = document.getElementById("constraintlist");
-  let supportedConstraints = navigator.mediaDevices.getSupportedConstraints();
-  
-  for (let constraint in supportedConstraints) {
-    if (supportedConstraints.hasOwnProperty(constraint)) {
-      let elem = document.createElement("li");
-      
-      elem.innerHTML = "<code>" + constraint + "</code>";
-      constraintList.appendChild(elem);
-    }
-  }
+  var canvas = document.getElementById('scanner-canvas') as HTMLCanvasElement;
+  const context = canvas.getContext('2d');
+  context.clearRect(0, 0, canvas.width, canvas.height);
 }

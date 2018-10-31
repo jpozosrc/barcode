@@ -67,7 +67,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "video {\r\n    border-radius: 6px;\r\n    width: 320px; \r\n    height: 240px;\r\n    border: 4px solid green;\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display:block;\r\n}\r\n\r\nbutton {\r\n    padding: 10px;\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display:block;\r\n}\r\n\r\ncanvas.drawing, canvas.drawingBuffer {\r\n    width: 320px; \r\n    height: 240px;\r\n    position: absolute;\r\n    left: 25px;\r\n    top: 50px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxtQkFBbUI7SUFDbkIsYUFBYTtJQUNiLGNBQWM7SUFDZCx3QkFBd0I7SUFDeEIsa0JBQWtCO0lBQ2xCLG1CQUFtQjtJQUNuQixjQUFjO0NBQ2pCOztBQUVEO0lBQ0ksY0FBYztJQUNkLGtCQUFrQjtJQUNsQixtQkFBbUI7SUFDbkIsY0FBYztDQUNqQjs7QUFFRDtJQUNJLGFBQWE7SUFDYixjQUFjO0lBQ2QsbUJBQW1CO0lBQ25CLFdBQVc7SUFDWCxVQUFVO0NBQ2IiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbInZpZGVvIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDZweDtcclxuICAgIHdpZHRoOiAzMjBweDsgXHJcbiAgICBoZWlnaHQ6IDI0MHB4O1xyXG4gICAgYm9yZGVyOiA0cHggc29saWQgZ3JlZW47XHJcbiAgICBtYXJnaW4tbGVmdDogYXV0bztcclxuICAgIG1hcmdpbi1yaWdodDogYXV0bzsgXHJcbiAgICBkaXNwbGF5OmJsb2NrO1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gICAgcGFkZGluZzogMTBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiBhdXRvOyBcclxuICAgIGRpc3BsYXk6YmxvY2s7XHJcbn1cclxuXHJcbmNhbnZhcy5kcmF3aW5nLCBjYW52YXMuZHJhd2luZ0J1ZmZlciB7XHJcbiAgICB3aWR0aDogMzIwcHg7IFxyXG4gICAgaGVpZ2h0OiAyNDBweDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGxlZnQ6IDI1cHg7XHJcbiAgICB0b3A6IDUwcHg7XHJcbn0iXX0= */"
+module.exports = "h3 {\r\n    text-align: center;\r\n}\r\n\r\n.barcode-component {\r\n    width: 100%;\r\n}\r\n\r\n.video-container {\r\n    width: 100%;\r\n    margin-left: auto;\r\n    margin-right: auto;\r\n}\r\n\r\nvideo {\r\n    border-radius: 6px;\r\n    width: 320px; \r\n    height: 240px;\r\n    border: 4px solid green;\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display:block;\r\n}\r\n\r\n.button-container {\r\n    text-align: center;\r\n    width: 100%;\r\n    margin-top: 20px;\r\n}\r\n\r\nbutton {\r\n    padding: 10px;\r\n}\r\n\r\ncanvas.drawing, canvas.drawingBuffer {\r\n    width: 320px; \r\n    height: 240px;\r\n    position: absolute;\r\n    left: 25px;\r\n    top: 50px;\r\n}\r\n\r\n#barcode-result {\r\n    text-align: center;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxtQkFBbUI7Q0FDdEI7O0FBRUQ7SUFDSSxZQUFZO0NBQ2Y7O0FBRUQ7SUFDSSxZQUFZO0lBQ1osa0JBQWtCO0lBQ2xCLG1CQUFtQjtDQUN0Qjs7QUFFRDtJQUNJLG1CQUFtQjtJQUNuQixhQUFhO0lBQ2IsY0FBYztJQUNkLHdCQUF3QjtJQUN4QixrQkFBa0I7SUFDbEIsbUJBQW1CO0lBQ25CLGNBQWM7Q0FDakI7O0FBRUQ7SUFDSSxtQkFBbUI7SUFDbkIsWUFBWTtJQUNaLGlCQUFpQjtDQUNwQjs7QUFFRDtJQUNJLGNBQWM7Q0FDakI7O0FBRUQ7SUFDSSxhQUFhO0lBQ2IsY0FBYztJQUNkLG1CQUFtQjtJQUNuQixXQUFXO0lBQ1gsVUFBVTtDQUNiOztBQUVEO0lBQ0ksbUJBQW1CO0NBQ3RCIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJoMyB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuXHJcbi5iYXJjb2RlLWNvbXBvbmVudCB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxufVxyXG5cclxuLnZpZGVvLWNvbnRhaW5lciB7XHJcbiAgICB3aWR0aDogMTAwJTtcclxuICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gICAgbWFyZ2luLXJpZ2h0OiBhdXRvO1xyXG59XHJcblxyXG52aWRlbyB7XHJcbiAgICBib3JkZXItcmFkaXVzOiA2cHg7XHJcbiAgICB3aWR0aDogMzIwcHg7IFxyXG4gICAgaGVpZ2h0OiAyNDBweDtcclxuICAgIGJvcmRlcjogNHB4IHNvbGlkIGdyZWVuO1xyXG4gICAgbWFyZ2luLWxlZnQ6IGF1dG87XHJcbiAgICBtYXJnaW4tcmlnaHQ6IGF1dG87IFxyXG4gICAgZGlzcGxheTpibG9jaztcclxufVxyXG5cclxuLmJ1dHRvbi1jb250YWluZXIge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXJnaW4tdG9wOiAyMHB4O1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gICAgcGFkZGluZzogMTBweDtcclxufVxyXG5cclxuY2FudmFzLmRyYXdpbmcsIGNhbnZhcy5kcmF3aW5nQnVmZmVyIHtcclxuICAgIHdpZHRoOiAzMjBweDsgXHJcbiAgICBoZWlnaHQ6IDI0MHB4O1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgbGVmdDogMjVweDtcclxuICAgIHRvcDogNTBweDtcclxufVxyXG5cclxuI2JhcmNvZGUtcmVzdWx0IHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufSJdfQ== */"
 
 /***/ }),
 
@@ -78,7 +78,7 @@ module.exports = "video {\r\n    border-radius: 6px;\r\n    width: 320px; \r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<h3 style=\"text-align: center;\">Scan Barcode</h3>\n\n<div style=\"width:100%;\">\n    <video id=\"video-player\" autoplay controls>\n        Your browser does not support HTML5 video.\n    </video>\n    <canvas class=\"drawingBuffer\"></canvas>\n    <br/>\n    <button type=\"button\" (click)=\"startScanner()\">Scan Barcode</button>\n</div>\n\n<h2 id=\"barcode-result\"></h2>\n\n<div id=\"devices\"></div>\n<div id=\"constraintlist\"></div>\n\n<router-outlet></router-outlet>\n"
+module.exports = "\n<div class=\"barcode-component\">\n    \n    <h3>Scan Barcode</h3>\n\n    <div class=\"video-container\">\n        <video id=\"video-player\" autoplay>\n            Your browser does not support HTML5 video.\n        </video>\n        <canvas id=\"scanner-canvas\" class=\"drawingBuffer\"></canvas>\n    </div>\n\n    <div class=\"button-container\">\n        <button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n        <button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n    </div>\n\n    <h2 id=\"barcode-result\"></h2>\n\n</div>\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -123,55 +123,26 @@ var AppComponent = /** @class */ (function () {
             }
             Quagga.start();
             console.log("Scanning engine ready.");
-            Quagga.onProcessed(function (result) {
-                /*
-                var drawingCtx = Quagga.canvas.ctx.overlay,
-                    drawingCanvas = Quagga.canvas.dom.overlay;
-                    console.log(drawingCtx)
-                if (result) {
-                    if (result.boxes) {
-                        drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
-                        result.boxes.filter(function (box) {
-                            return box !== result.box;
-                        }).forEach(function (box) {
-                            Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 2});
-                        });
-                    }
-        
-                    if (result.box) {
-                        Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
-                    }
-        
-                    if (result.codeResult && result.codeResult.code) {
-                        Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
-                    }
-                }*/
-            });
-            Quagga.onDetected(function (result) {
-                //video.pause();
-                //this.barcode = 'julio'
-                document.getElementById('barcode-result').innerText = 'Code: ' + result.codeResult.code;
-                //alert(result.codeResult.code);
-                //stopVideo();
-                //Quagga.stop();
-                var drawingCtx = Quagga.canvas.ctx.overlay, drawingCanvas = Quagga.canvas.dom.overlay;
-                if (result) {
-                    if (result.boxes) {
-                        drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
-                        result.boxes.filter(function (box) {
-                            return box !== result.box;
-                        }).forEach(function (box) {
-                            Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, { color: "green", lineWidth: 4 });
-                        });
-                    }
-                    if (result.box) {
-                        Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, { color: "#00F", lineWidth: 4 });
-                    }
-                    if (result.codeResult && result.codeResult.code) {
-                        Quagga.ImageDebug.drawPath(result.line, { x: 'x', y: 'y' }, drawingCtx, { color: 'red', lineWidth: 6 });
-                    }
+        });
+        Quagga.onDetected(function (result) {
+            document.getElementById('barcode-result').innerText = 'Code: ' + result.codeResult.code;
+            var drawingCtx = Quagga.canvas.ctx.overlay, drawingCanvas = Quagga.canvas.dom.overlay;
+            if (result) {
+                if (result.boxes) {
+                    drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+                    result.boxes.filter(function (box) {
+                        return box !== result.box;
+                    }).forEach(function (box) {
+                        Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, { color: "green", lineWidth: 4 });
+                    });
                 }
-            });
+                if (result.box) {
+                    Quagga.ImageDebug.drawPath(result.box, { x: 0, y: 1 }, drawingCtx, { color: "#00F", lineWidth: 4 });
+                }
+                if (result.codeResult && result.codeResult.code) {
+                    Quagga.ImageDebug.drawPath(result.line, { x: 'x', y: 'y' }, drawingCtx, { color: 'red', lineWidth: 6 });
+                }
+            }
         });
     };
     AppComponent.prototype.stopScanner = function () {
@@ -211,37 +182,15 @@ function startVideo() {
     });
 }
 function stopVideo() {
+    Quagga.stop();
     if (video.srcObject) {
         var track = video.srcObject.getTracks()[0];
         track.stop();
     }
     video.srcObject = null;
-}
-/* Debugging helper functions */
-function enumerateDevices() {
-    navigator.mediaDevices.enumerateDevices()
-        .then(function (devices) {
-        devices.forEach(function (device) {
-            var deviceList = document.getElementById("device-list");
-            var elem = document.createElement("option");
-            elem.innerHTML = '<option value="' + device.deviceId + '">' + device.deviceId + '</option>';
-            deviceList.appendChild(elem);
-        });
-    })
-        .catch(function (err) {
-        console.log(err.name + ": " + err.message);
-    });
-}
-function viewSupportedConstraints() {
-    var constraintList = document.getElementById("constraintlist");
-    var supportedConstraints = navigator.mediaDevices.getSupportedConstraints();
-    for (var constraint in supportedConstraints) {
-        if (supportedConstraints.hasOwnProperty(constraint)) {
-            var elem = document.createElement("li");
-            elem.innerHTML = "<code>" + constraint + "</code>";
-            constraintList.appendChild(elem);
-        }
-    }
+    var canvas = document.getElementById('scanner-canvas');
+    var context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 
