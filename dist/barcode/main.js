@@ -67,7 +67,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "video {\r\n    width: 320px; \r\n    height: 240px;\r\n    border: 4px solid green;\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display:block;\r\n}\r\n\r\nbutton {\r\n    padding: 10px;\r\n    margin-left: auto;\r\n    margin-right: auto; \r\n    display:block;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxhQUFhO0lBQ2IsY0FBYztJQUNkLHdCQUF3QjtJQUN4QixrQkFBa0I7SUFDbEIsbUJBQW1CO0lBQ25CLGNBQWM7Q0FDakI7O0FBRUQ7SUFDSSxjQUFjO0lBQ2Qsa0JBQWtCO0lBQ2xCLG1CQUFtQjtJQUNuQixjQUFjO0NBQ2pCIiwiZmlsZSI6InNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJ2aWRlbyB7XHJcbiAgICB3aWR0aDogMzIwcHg7IFxyXG4gICAgaGVpZ2h0OiAyNDBweDtcclxuICAgIGJvcmRlcjogNHB4IHNvbGlkIGdyZWVuO1xyXG4gICAgbWFyZ2luLWxlZnQ6IGF1dG87XHJcbiAgICBtYXJnaW4tcmlnaHQ6IGF1dG87IFxyXG4gICAgZGlzcGxheTpibG9jaztcclxufVxyXG5cclxuYnV0dG9uIHtcclxuICAgIHBhZGRpbmc6IDEwcHg7XHJcbiAgICBtYXJnaW4tbGVmdDogYXV0bztcclxuICAgIG1hcmdpbi1yaWdodDogYXV0bzsgXHJcbiAgICBkaXNwbGF5OmJsb2NrO1xyXG59Il19 */"
 
 /***/ }),
 
@@ -78,7 +78,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<h3 style=\"text-align: center;\">Scan Barcode</h3>\n\n<div style=\"width:100%;\">\n    <video id=\"video-player\" style=\"width: 320px; height: 240px;border: 4px solid green;\"></video>\n</div>\n\n<br/>\n\n<div style=\"width:100%;\">\n    <button type=\"button\" (click)=\"initScanner()\">Scan Barcode</button>\n</div>\n\n<h2>{{ barcodeResult }}</h2>\n\n<div id=\"devices\"></div>\n<div id=\"constraintlist\"></div>\n\n<router-outlet></router-outlet>\n"
+module.exports = "\n\n<h3 style=\"text-align: center;\">Scan Barcode</h3>\n\n<div style=\"width:100%;\">\n    <video id=\"video-player\" autoplay>\n        Your browser does not support HTML5 video.\n    </video>\n    <br/>\n    <button type=\"button\" (click)=\"initScanner()\">Scan Barcode</button>\n</div>\n\n<h2 id=\"barcode-result\">{{ barcodeResult }}</h2>\n\n<div id=\"devices\"></div>\n<div id=\"constraintlist\"></div>\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -157,13 +157,13 @@ function startVideo() {
     //viewSupportedConstraints();
     var constraints = {
         audio: false,
-        video: { facingMode: "environment" }
+        video: { facingMode: "default" }
     };
     navigator.mediaDevices.getUserMedia(constraints)
         .then(function (stream) {
         video = document.getElementById('video-player');
         video.srcObject = stream;
-        video.onloadedmetadata = function (e) { video.play(); };
+        //video.onloadedmetadata = function(e) { video.play(); };
     })
         .catch(function (err) {
         alert(err);
