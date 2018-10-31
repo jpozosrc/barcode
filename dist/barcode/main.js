@@ -78,7 +78,7 @@ module.exports = "video {\r\n    width: 320px; \r\n    height: 240px;\r\n    bor
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<h3 style=\"text-align: center;\">Scan Barcode</h3>\n\n<div style=\"width:100%;\">\n    <video id=\"video-player\" autoplay>\n        Your browser does not support HTML5 video.\n    </video>\n    <br/>\n    <button type=\"button\" (click)=\"initScanner()\">Scan Barcode</button>\n</div>\n\n<h2 id=\"barcode-result\">{{ barcodeResult }}</h2>\n\n<div id=\"devices\"></div>\n<div id=\"constraintlist\"></div>\n\n<router-outlet></router-outlet>\n"
+module.exports = "\n\n<h3 style=\"text-align: center;\">Scan Barcode</h3>\n\n<div style=\"width:100%;\">\n    <video id=\"video-player\">\n        Your browser does not support HTML5 video.\n    </video>\n    <br/>\n    <button type=\"button\" (click)=\"initScanner()\">Scan Barcode</button>\n</div>\n\n<h2 id=\"barcode-result\">{{ barcodeResult }}</h2>\n\n<div id=\"devices\"></div>\n<div id=\"constraintlist\"></div>\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
