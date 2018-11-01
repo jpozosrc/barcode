@@ -22,7 +22,7 @@ export class AppComponent {
         target: document.querySelector('#video-player')
       },
       
-      locator: { patchSize: "x-large" },
+      locator: { patchSize: "medium" },
     };
 
     Quagga.init(settings, function(err) {
