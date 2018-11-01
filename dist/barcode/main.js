@@ -78,7 +78,7 @@ module.exports = "h3 {\r\n    text-align: center;\r\n}\r\n\r\n.barcode-component
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"barcode-component\">\n    \n    <h3>Scan Barcode</h3>\n\n    <div class=\"video-container\">\n        <video id=\"video-player\" autoplay>\n            Your browser does not support HTML5 video.\n        </video>\n        <canvas id=\"scanner-canvas\" class=\"drawingBuffer\"></canvas>\n    </div>\n\n    <div class=\"button-container\">\n        <button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n        <button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n    </div>\n\n    <h2 id=\"barcode-result\"></h2>\n\n</div>\n\n<router-outlet></router-outlet>\n"
+module.exports = "\n<div class=\"barcode-component\">\n    \n    <h3>Scan Barcode</h3>\n\n    <div class=\"video-container\">\n        <video id=\"video-player\" autoplay controls>\n            Your browser does not support HTML5 video.\n        </video>\n        <canvas id=\"scanner-canvas\" class=\"drawingBuffer\"></canvas>\n    </div>\n\n    <div class=\"button-container\">\n        <button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n        <button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n    </div>\n\n    <h2 id=\"barcode-result\"></h2>\n\n</div>\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -106,7 +106,7 @@ var AppComponent = /** @class */ (function () {
     }
     AppComponent.prototype.startScanner = function () {
         var config = {
-            decoder: { readers: ["code_128_reader"] },
+            decoder: { readers: ["code_128_reader", "code_39_reader", "ean_8_reader"] },
             locate: true,
             inputStream: {
                 name: 'Live',
