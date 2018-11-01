@@ -106,7 +106,7 @@ var AppComponent = /** @class */ (function () {
     }
     AppComponent.prototype.startScanner = function () {
         var config = {
-            decoder: { readers: ["code_128_reader", "code_39_reader", "ean_8_reader"] },
+            decoder: { readers: ["code_128_reader", "code_39_reader"] },
             locate: true,
             inputStream: {
                 name: 'Live',
