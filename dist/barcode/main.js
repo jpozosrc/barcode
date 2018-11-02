@@ -78,7 +78,7 @@ module.exports = "h3 {\r\n    text-align: center;\r\n}\r\n\r\nh2 {\r\n    font-s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"video-container\">\n    <video id=\"video-player\" autoplay=\"true\" playsinline=\"true\" controls=\"true\">\n        Your browser does not support HTML5 video.\n    </video>\n    <canvas id=\"scanner-canvas\" class=\"drawingBuffer\"></canvas> <!-- Overlay -->\n</div>\n\n<div class=\"button-container\">\n    <button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n    <button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n    <h2 id=\"barcode-result\"></h2>\n</div>\n\n\n<router-outlet></router-outlet>\n"
+module.exports = "\n<div class=\"video-container\">\n    <video id=\"video-player\" autoplay=\"true\" playsinline=\"true\" controls=\"true\">\n        Your browser does not support HTML5 video.\n    </video>\n    <canvas id=\"scanner-canvas\" class=\"drawingBuffer\"></canvas> <!-- Overlay -->\n</div>\n\n<div class=\"button-container\">\n    <button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n    <button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n    <span id=\"barcode-result\"></span>\n</div>\n\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
