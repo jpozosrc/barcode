@@ -2,6 +2,10 @@ h3 {
     text-align: center;
 }
 
+select {
+    padding: 5px;
+}
+
 .barcode-component {
     width: 100%;
 }

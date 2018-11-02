@@ -9,8 +9,11 @@
     </div>
 
     <div class="button-container"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <button type="button" (click)="showCameras()">Detect Cameras</button>&nbsp;
         <button type="button" (click)="startScanner()">Start</button>&nbsp;
         <button type="button" (click)="stopScanner()">Stop</button>
+        <br/><br/>
+        <select id="cameras"></select>
     </div>
 
     <h2 id="barcode-result"></h2>

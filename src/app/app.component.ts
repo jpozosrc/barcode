@@ -12,7 +12,6 @@ export class AppComponent {
   barcode : string = '';
  
   startScanner() : void {
-
     let settings = {
       decoder: { readers: ["code_128_reader", "code_39_reader"] },
       locate: true,
@@ -51,6 +50,23 @@ export class AppComponent {
     stopVideo();
   }
 
+  showCameras() : void {
+    var cameraList = document.getElementById('cameras');
+    navigator.mediaDevices.enumerateDevices()
+      .then(function(devices) {
+        devices.forEach(function(device) {
+          if(device.kind == "videoinput") {
+            const option = document.createElement('option');
+            option.value = device.deviceId;
+            const label = device.label;
+            const textNode = document.createTextNode(label);
+            option.appendChild(textNode);
+            cameraList.appendChild(option);
+          }
+    });
+  })
+  }
+
 }
 
 var video = null;
@@ -62,9 +78,12 @@ function startVideo() {
     return;
   }
 
+  var cameras = (document.getElementById("cameras")) as HTMLSelectElement;
+
   var constraints = { 
     audio: false,
-    video: { facingMode: "environment" }
+    //video: { facingMode: "environment" }
+    video: { deviceId: { exact: cameras.value } }
   };
   
   navigator.mediaDevices.getUserMedia(constraints)
