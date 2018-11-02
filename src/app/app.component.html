@@ -2,7 +2,7 @@
 <div class="barcode-component">
     
     <div class="video-container">
-        <video id="video-player" autoplay="true" playsinline="true" controls="true">
+        <video id="video-player" autoplay="true" playsinline="true" controls="true" width="320" height="240">
             Your browser does not support HTML5 video.
         </video>
         <canvas id="scanner-canvas" class="drawingBuffer"></canvas>
@@ -13,8 +13,6 @@
         <button type="button" (click)="stopScanner()">Stop</button>
         <h2 id="barcode-result"></h2>
     </div>
-
-    
 
 </div>
 
