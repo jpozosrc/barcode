@@ -82,8 +82,8 @@ function startVideo() {
 
   var constraints = { 
     audio: false,
-    //video: { facingMode: "environment" }
-    video: { deviceId: { exact: cameras.value } }
+    video: { facingMode: "environment" }
+    //video: { deviceId: { exact: cameras.value } }
   };
   
   navigator.mediaDevices.getUserMedia(constraints)

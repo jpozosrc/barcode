@@ -78,7 +78,7 @@ module.exports = "h3 {\r\n    text-align: center;\r\n}\r\n\r\nselect {\r\n    pa
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"barcode-component\">\n    \n    <div class=\"video-container\">\n        <video id=\"video-player\" controls=\"true\">\n            Your browser does not support HTML5 video.\n        </video>\n        <canvas id=\"scanner-canvas\" class=\"drawingBuffer\"></canvas>\n    </div>\n\n    <div class=\"button-container\"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>\n        <button type=\"button\" (click)=\"showCameras()\">Detect Cameras</button>&nbsp;\n        <button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n        <button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n        <br/><br/>\n        <select id=\"cameras\"></select>\n    </div>\n\n    <h2 id=\"barcode-result\"></h2>\n\n</div>\n\n<router-outlet></router-outlet>\n"
+module.exports = "\n<div class=\"barcode-component\">\n    \n    <div class=\"video-container\">\n        <video id=\"video-player\" autoplay=\"true\" playsinline=\"true\" controls=\"true\">\n            Your browser does not support HTML5 video.\n        </video>\n        <canvas id=\"scanner-canvas\" class=\"drawingBuffer\"></canvas>\n    </div>\n\n    <div class=\"button-container\"><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>\n        <button type=\"button\" (click)=\"showCameras()\">Detect Cameras</button>&nbsp;\n        <button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n        <button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n        <br/><br/>\n        <select id=\"cameras\"></select>\n    </div>\n\n    <h2 id=\"barcode-result\"></h2>\n\n</div>\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -168,8 +168,8 @@ function startVideo() {
     var cameras = (document.getElementById("cameras"));
     var constraints = {
         audio: false,
-        //video: { facingMode: "environment" }
-        video: { deviceId: { exact: cameras.value } }
+        video: { facingMode: "environment" }
+        //video: { deviceId: { exact: cameras.value } }
     };
     navigator.mediaDevices.getUserMedia(constraints)
         .then(function (stream) {
