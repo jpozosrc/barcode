@@ -79,11 +79,21 @@ function startVideo() {
 }
 
 function stopVideo() {
-  Quagga.stop();
+  
+  try {
+    Quagga.stop();
+  }
+  catch {
+    return; // Intentionally suppressed
+  }
 
   if(video.srcObject) {
-    var track = video.srcObject.getTracks()[0];
-    track.stop();
+    let tracks = video.srcObject.getTracks();
+    
+    if(tracks && tracks[0]) {
+      let track = tracks[0];
+      track.stop();
+    }
   }
   
   video.srcObject = null;

@@ -67,7 +67,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h3 {\r\n    text-align: center;\r\n}\r\n\r\nselect {\r\n    padding: 5px;\r\n}\r\n\r\n.barcode-component {\r\n    width: 100%;\r\n}\r\n\r\n.video-container {\r\n    width: 100%;\r\n    /*margin-left: auto;\r\n    margin-right: auto;*/\r\n}\r\n\r\nvideo {\r\n    border-radius: 6px;\r\n    /*width: 320px; \r\n    height: 240px;*/\r\n    position: absolute;\r\n    left: 28px;\r\n    top: 12px;\r\n    border: 4px solid #000;\r\n}\r\n\r\n.button-container {\r\n    width: 100%;\r\n    margin-top: 270px;\r\n    margin-left: 28px;\r\n}\r\n\r\nbutton {\r\n    padding: 10px;\r\n}\r\n\r\ncanvas.drawing, canvas.drawingBuffer {\r\n    border-radius: 6px;\r\n    width: 320px; \r\n    height: 240px;\r\n    position: absolute;\r\n    left: 28px;\r\n    top: 12px;\r\n}\r\n\r\n#barcode-result {\r\n    text-align: center;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxtQkFBbUI7Q0FDdEI7O0FBRUQ7SUFDSSxhQUFhO0NBQ2hCOztBQUVEO0lBQ0ksWUFBWTtDQUNmOztBQUVEO0lBQ0ksWUFBWTtJQUNaO3lCQUNxQjtDQUN4Qjs7QUFFRDtJQUNJLG1CQUFtQjtJQUNuQjtvQkFDZ0I7SUFDaEIsbUJBQW1CO0lBQ25CLFdBQVc7SUFDWCxVQUFVO0lBQ1YsdUJBQXVCO0NBQzFCOztBQUVEO0lBQ0ksWUFBWTtJQUNaLGtCQUFrQjtJQUNsQixrQkFBa0I7Q0FDckI7O0FBRUQ7SUFDSSxjQUFjO0NBQ2pCOztBQUVEO0lBQ0ksbUJBQW1CO0lBQ25CLGFBQWE7SUFDYixjQUFjO0lBQ2QsbUJBQW1CO0lBQ25CLFdBQVc7SUFDWCxVQUFVO0NBQ2I7O0FBRUQ7SUFDSSxtQkFBbUI7Q0FDdEIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbImgzIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuc2VsZWN0IHtcclxuICAgIHBhZGRpbmc6IDVweDtcclxufVxyXG5cclxuLmJhcmNvZGUtY29tcG9uZW50IHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4udmlkZW8tY29udGFpbmVyIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG4gICAgLyptYXJnaW4tbGVmdDogYXV0bztcclxuICAgIG1hcmdpbi1yaWdodDogYXV0bzsqL1xyXG59XHJcblxyXG52aWRlbyB7XHJcbiAgICBib3JkZXItcmFkaXVzOiA2cHg7XHJcbiAgICAvKndpZHRoOiAzMjBweDsgXHJcbiAgICBoZWlnaHQ6IDI0MHB4OyovXHJcbiAgICBwb3NpdGlvbjogYWJzb2x1dGU7XHJcbiAgICBsZWZ0OiAyOHB4O1xyXG4gICAgdG9wOiAxMnB4O1xyXG4gICAgYm9yZGVyOiA0cHggc29saWQgIzAwMDtcclxufVxyXG5cclxuLmJ1dHRvbi1jb250YWluZXIge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXJnaW4tdG9wOiAyNzBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAyOHB4O1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gICAgcGFkZGluZzogMTBweDtcclxufVxyXG5cclxuY2FudmFzLmRyYXdpbmcsIGNhbnZhcy5kcmF3aW5nQnVmZmVyIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDZweDtcclxuICAgIHdpZHRoOiAzMjBweDsgXHJcbiAgICBoZWlnaHQ6IDI0MHB4O1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgbGVmdDogMjhweDtcclxuICAgIHRvcDogMTJweDtcclxufVxyXG5cclxuI2JhcmNvZGUtcmVzdWx0IHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxufSJdfQ== */"
+module.exports = "h3 {\r\n    text-align: center;\r\n}\r\n\r\nh2 {\r\n    font-size: 13pt;\r\n    display: inline;\r\n    margin-left: 12px;\r\n}\r\n\r\nselect {\r\n    padding: 5px;\r\n}\r\n\r\n.barcode-component {\r\n    width: 100%;\r\n}\r\n\r\n.video-container {\r\n    width: 100%;\r\n}\r\n\r\nvideo {\r\n    border-radius: 6px;\r\n    width: 320px; \r\n    height: 240px;\r\n    position: absolute;\r\n    left: 28px;\r\n    top: 12px;\r\n    border: 4px solid #000;\r\n    z-index: 1;\r\n}\r\n\r\n.button-container {\r\n    width: 100%;\r\n    margin-top: 270px;\r\n    margin-left: 21px;\r\n}\r\n\r\nbutton {\r\n    padding: 10px;\r\n}\r\n\r\ncanvas.drawing, canvas.drawingBuffer {\r\n    border-radius: 6px;\r\n    width: 320px; \r\n    height: 240px;\r\n    position: absolute;\r\n    left: 32px;\r\n    top: 16px;\r\n    z-index: 9999;\r\n}\r\n\r\n#barcode-result {\r\n    text-align: center;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxtQkFBbUI7Q0FDdEI7O0FBRUQ7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLGtCQUFrQjtDQUNyQjs7QUFFRDtJQUNJLGFBQWE7Q0FDaEI7O0FBRUQ7SUFDSSxZQUFZO0NBQ2Y7O0FBRUQ7SUFDSSxZQUFZO0NBQ2Y7O0FBRUQ7SUFDSSxtQkFBbUI7SUFDbkIsYUFBYTtJQUNiLGNBQWM7SUFDZCxtQkFBbUI7SUFDbkIsV0FBVztJQUNYLFVBQVU7SUFDVix1QkFBdUI7SUFDdkIsV0FBVztDQUNkOztBQUVEO0lBQ0ksWUFBWTtJQUNaLGtCQUFrQjtJQUNsQixrQkFBa0I7Q0FDckI7O0FBRUQ7SUFDSSxjQUFjO0NBQ2pCOztBQUVEO0lBQ0ksbUJBQW1CO0lBQ25CLGFBQWE7SUFDYixjQUFjO0lBQ2QsbUJBQW1CO0lBQ25CLFdBQVc7SUFDWCxVQUFVO0lBQ1YsY0FBYztDQUNqQjs7QUFFRDtJQUNJLG1CQUFtQjtDQUN0QiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaDMge1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG59XHJcblxyXG5oMiB7XHJcbiAgICBmb250LXNpemU6IDEzcHQ7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmU7XHJcbiAgICBtYXJnaW4tbGVmdDogMTJweDtcclxufVxyXG5cclxuc2VsZWN0IHtcclxuICAgIHBhZGRpbmc6IDVweDtcclxufVxyXG5cclxuLmJhcmNvZGUtY29tcG9uZW50IHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG4udmlkZW8tY29udGFpbmVyIHtcclxuICAgIHdpZHRoOiAxMDAlO1xyXG59XHJcblxyXG52aWRlbyB7XHJcbiAgICBib3JkZXItcmFkaXVzOiA2cHg7XHJcbiAgICB3aWR0aDogMzIwcHg7IFxyXG4gICAgaGVpZ2h0OiAyNDBweDtcclxuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcclxuICAgIGxlZnQ6IDI4cHg7XHJcbiAgICB0b3A6IDEycHg7XHJcbiAgICBib3JkZXI6IDRweCBzb2xpZCAjMDAwO1xyXG4gICAgei1pbmRleDogMTtcclxufVxyXG5cclxuLmJ1dHRvbi1jb250YWluZXIge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXJnaW4tdG9wOiAyNzBweDtcclxuICAgIG1hcmdpbi1sZWZ0OiAyMXB4O1xyXG59XHJcblxyXG5idXR0b24ge1xyXG4gICAgcGFkZGluZzogMTBweDtcclxufVxyXG5cclxuY2FudmFzLmRyYXdpbmcsIGNhbnZhcy5kcmF3aW5nQnVmZmVyIHtcclxuICAgIGJvcmRlci1yYWRpdXM6IDZweDtcclxuICAgIHdpZHRoOiAzMjBweDsgXHJcbiAgICBoZWlnaHQ6IDI0MHB4O1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgbGVmdDogMzJweDtcclxuICAgIHRvcDogMTZweDtcclxuICAgIHotaW5kZXg6IDk5OTk7XHJcbn1cclxuXHJcbiNiYXJjb2RlLXJlc3VsdCB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -78,7 +78,7 @@ module.exports = "h3 {\r\n    text-align: center;\r\n}\r\n\r\nselect {\r\n    pa
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"barcode-component\">\n    \n    <div class=\"video-container\">\n        <video id=\"video-player\" autoplay=\"true\" playsinline=\"true\" controls=\"true\" width=\"320\" height=\"240\">\n            Your browser does not support HTML5 video.\n        </video>\n        <canvas id=\"scanner-canvas\" class=\"drawingBuffer\"></canvas>\n    </div>\n\n    <div class=\"button-container\">\n        <button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n        <button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n        <h2 id=\"barcode-result\"></h2>\n    </div>\n\n</div>\n\n<router-outlet></router-outlet>\n"
+module.exports = "\n<div class=\"video-container\">\n    <video id=\"video-player\" autoplay=\"true\" playsinline=\"true\" controls=\"true\">\n        Your browser does not support HTML5 video.\n    </video>\n    <canvas id=\"scanner-canvas\" class=\"drawingBuffer\"></canvas> <!-- Overlay -->\n</div>\n\n<div class=\"button-container\">\n    <button type=\"button\" (click)=\"startScanner()\">Start</button>&nbsp;\n    <button type=\"button\" (click)=\"stopScanner()\">Stop</button>\n    <h2 id=\"barcode-result\"></h2>\n</div>\n\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -164,10 +164,18 @@ function startVideo() {
     });
 }
 function stopVideo() {
-    Quagga.stop();
+    try {
+        Quagga.stop();
+    }
+    catch (_a) {
+        return; // Intentionally suppressed
+    }
     if (video.srcObject) {
-        var track = video.srcObject.getTracks()[0];
-        track.stop();
+        var tracks = video.srcObject.getTracks();
+        if (tracks && tracks[0]) {
+            var track = tracks[0];
+            track.stop();
+        }
     }
     video.srcObject = null;
     var canvas = document.getElementById('scanner-canvas');
