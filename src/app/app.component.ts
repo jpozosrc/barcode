@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 declare var Quagga: any;
 
 @Component({
@@ -7,122 +7,75 @@ declare var Quagga: any;
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  barcode : string = '';
- 
+  constructor() { }
+
+  ngOnInit() {
+
+  }
+
   startScanner() : void {
+
     let settings = {
       decoder: { readers: ["code_128_reader", "code_39_reader"] },
+      frequency: 3,
       locate: true,
       inputStream: { 
-        name: 'Live', 
         type: 'LiveStream', 
-        target: document.querySelector('#video-player')
+        target: document.querySelector('#video-player'),
+        constraints: { facingMode : "environment" }
       },
       
-      locator: { patchSize: "medium" },
+      locator: { patchSize: "medium", halfSample: true },
+      numOfWorkers: 2
     };
 
     Quagga.init(settings, function(err) {
       
       if (err) {
           console.log(err);
-          return
+          return;
       }
       
-      startVideo();
       Quagga.start();
 
-      Quagga.onDetected(function(result) {
-        document.getElementById('barcode-result').innerText = 'Code: ' +  result.codeResult.code;
-      });
+    });
 
-      Quagga.onProcessed(function(result) {
-        drawBoxes(result)
-      });
-    
+    Quagga.onProcessed(function(result) {
+      var drawingCtx = Quagga.canvas.ctx.overlay,
+          drawingCanvas = Quagga.canvas.dom.overlay;
+
+      if (result) {
+          if (result.boxes) {
+              drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+              result.boxes.filter(function (box) {
+                  return box !== result.box;
+              }).forEach(function (box) {
+                  Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 3});
+              });
+          }
+
+          if (result.box) {
+              Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 3});
+          }
+
+          if (result.codeResult && result.codeResult.code) {
+              Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 4});
+          }
+      }
+    });
+
+    Quagga.onDetected(function(result) {
+        var code = document.getElementById('barcode-result');
+        code.innerText = result.codeResult.code;
     });
     
   }
 
   stopScanner() : void {
-    stopVideo();
-  }
-
-}
-
-var video = null;
-
-function startVideo() {
-
-  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-    alert('UserMedia not supported')
-    return;
-  }
-
-  var constraints = { 
-    audio: false,
-    video: { facingMode: "environment" }
-  };
-  
-  navigator.mediaDevices.getUserMedia(constraints)
-    .then(function(stream) {
-      video = document.getElementById('video-player') as HTMLVideoElement;
-      video.srcObject = stream;
-    })
-    .catch(function(err){
-      alert(err);
-      console.log(err)
-    })
-   
-}
-
-function stopVideo() {
-  
-  try {
     Quagga.stop();
   }
-  catch {
-    return; // Intentionally suppressed
-  }
 
-  if(video.srcObject) {
-    let tracks = video.srcObject.getTracks();
-    
-    if(tracks && tracks[0]) {
-      let track = tracks[0];
-      track.stop();
-    }
-  }
-  
-  video.srcObject = null;
-  var canvas = document.getElementById('scanner-canvas') as HTMLCanvasElement;
-  const context = canvas.getContext('2d');
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  document.getElementById('barcode-result').innerText = '';
 }
 
-function drawBoxes(result) {
-  var drawingCtx = Quagga.canvas.ctx.overlay,
-  drawingCanvas = Quagga.canvas.dom.overlay;
-
-  if (result) {
-    if (result.boxes) {
-        drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
-        result.boxes.filter(function (box) {
-            return box !== result.box;
-        }).forEach(function (box) {
-            Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 4});
-        });
-    }
-
-    if (result.box) {
-        Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 4});
-    }
-
-    if (result.codeResult && result.codeResult.code) {
-        Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 6});
-    }
-  }
-}

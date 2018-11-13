@@ -1,6 +1,4 @@
-﻿param($commitMsg)
-
+﻿npm run build
 git add .
-npm run build
-git commit -am "$commitMsg"
+git commit -am "ios fix"
 git push origin master

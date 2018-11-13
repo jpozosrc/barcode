@@ -1,25 +1,11 @@
 
-  <div class="header">
-    <div id="hamburger-menu"></div>
-  </div>
+<button type="button" (click)="startScanner()">Start</button>&nbsp;
+<button type="button" (click)="stopScanner()">Stop</button>
+&nbsp;<span id="barcode-result"></span>
 
-<div id="julio">
-    <div class="video-container">
-        <video id="video-player" autoplay="true" playsinline="true" controls="true">
-            Your browser does not support HTML5 video.
-        </video>
-        <canvas id="scanner-canvas" class="drawingBuffer"></canvas> <!-- Overlay -->
+<div id="scanner">
+    <div id="interactive" class="viewport">
+        <video></video>
+        <canvas class="drawingBuffer"></canvas>
     </div>
-
-    <div class="button-container">
-        <button type="button" (click)="startScanner()">Start</button>&nbsp;
-        <button type="button" (click)="stopScanner()">Stop</button>
-        <span id="barcode-result"></span>
-    </div>
-
 </div>
-
-
-
-
-<router-outlet></router-outlet>
